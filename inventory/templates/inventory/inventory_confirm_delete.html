@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class='bg-light'>
+
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a href="{% url 'inventory_list' %}" class="navbar-brand mb-0 h1 text-decoration-none">Inventory Management System</a>
+        </div>
+    </nav>
+    
+    <div class="container" styles="max-width: 600px;">
+        <div class="card border-danger shadow-sm mt-5">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Confirm Deletion</h4>
+            </div>
+            <div class"card-body text-center">
+                <h5 class="card-title">Are you sure you want to delete this asset?</h5>
+                <p class="card-text text-muted mt-3">
+                    <strong>{{ item.item_name }}</strong> (S/N: {{ item.serial_number }})
+                </p>
+                <p class="text-danger small">This action cannot be undone.</p>
+
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <a href="{% url 'inventory_list' %}" class="btn btn-secondary me-2">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Yes, Delete Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

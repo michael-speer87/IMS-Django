@@ -1,0 +1,25 @@
+#Python environment and cache
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local Database
+db.sqlite3
+
+# Environment Variables / Secrets
+.env
+.env.local
+
+# Legacy Data Imports
+inventory.csv
+inventory1.csv
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Static / Media Files
+/media/
+/static/
